@@ -1,4 +1,4 @@
-# COMPE-561-Group-1
+# Yes!Places
 COMPE-561 Term Project Group #1
 
 # Features
