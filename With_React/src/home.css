@@ -1,0 +1,56 @@
+body { /* CSS */
+    background-image: url('homebg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.border-text
+  {
+    font-family: georgia;
+    font-size: 35pt;
+    font-style: italic; 
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    margin-right: 50px;
+
+  }
+
+.btn-space
+{
+    margin-right: 50px;
+}
+
+.btn0 {
+  background-color: transparent;
+  border: none;
+  padding-top: 5%;
+  padding-left: 5%;
+  width: 300px;
+}
+
+.btn1 {
+  background-color: #C4EBFF;
+  border: solid 5px;
+  border-width: 12%;
+  outline: dark;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.btn2 {
+  background-color: #C4EBFF;
+  border: solid 3px;
+  border-width: 12%;
+  outline: dark;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+
+
+
