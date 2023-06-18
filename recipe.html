@@ -12,7 +12,12 @@
 <body>
     <style>
         body { /* CSS */
-          background-color:#c6d1d7;
+        background-image: url('gradient.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
         }
 
         .border-text {
@@ -44,7 +49,7 @@
                 border-radius: 10px; margin-left: 50px;">Profile Page</button>
           </nav>
           <nav><form class="container-fluid">
-            <span class="border-text"><font color = "#FFFFFF"> Yes!Place </font> </span>
+            <span class="border-text"><font color = black> Yes!Place </font> </span>
             <button class="btn btn-outline-dark" style="border: solid 5px;border-radius: 10px;
             background-color: #C4EBFF"><a href="recipe.html">Cooking Recipes</a></button>
             <button class="btn btn-outline-dark" style="width: 150px; border: solid 3px;border-radius: 10px;
@@ -59,4 +64,33 @@
              background-color: #C4EBFF" type="button"><a href="hotel.html" >Hotels</a></button>
           </form></nav>
 
-          
+          <div class="input-group m-3">
+            <input type="text" class="form-control-sm" placeholder="Seach Recipes" style="border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"style="border: dashed 3px;
+              border-radius: 10px;background-color:#C4EBFF">Button</button>
+            </div>
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01"style="border: solid 3px;
+              border-radius: 10px;background-color:#C4EBFF">Types of Cuisines</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01"style="border: dashed 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              <option selected>Choose...</option>
+              <option value="1">Italian</option>
+              <option value="2">Mexican</option>
+              <option value="3">Indian</option>
+            </select>
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01"style="border: solid 3px;
+              border-radius: 10px;background-color:#C4EBFF">Trending Recipes</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01"style="border: dashed 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              <option selected>Choose...</option>
+              <option value="1">Pad Thai</option>
+              <option value="2">Peanut Butter Burger</option>
+              <option value="3"> Chocolate Cheesecake</option>
+            </select>
+          </div>
