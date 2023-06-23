@@ -1,90 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <title>Bootstrap 5 Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </head>
-<body>
-    
-
-    <nav class="navbar bg-body-tertiary">
-        <form class="container-fluid justify-content-end">
-          <p><a href="#">Username</a></p>
-          <button class="btn btn-outline-dark" style="width: 17%; border: solid 5px;  solid 5px; background-color: #C4EBFF; margin-left: 50px;">Profile Page</button>
-        </form>
-
-        <form class="container-fluid justify-content-end">
-          <button class="btn"> <span class="border-text"><font color = "#FFFFFF"> Yes!Place </font> </span></button>
-          <button class="btn btn-outline-dark btn-space" style="width: 12%; border: solid 5px; background-color: #C4EBFF">Restaurant</button>
-          <button class="btn btn-outline-dark m-1" style="width: 12%; border: solid 5px; background-color: #C4EBFF" type="button">Pet Restaurants</button>
-          <button class="btn btn-outline-dark m-1" style="width: 12%; border: solid 5px; background-color: #C4EBFF" type="button">Hotels</button>
-          <button class="btn btn-outline-dark m-1" style="width: 12%; border: solid 5px; background-color: #C4EBFF" type="button">Cooking Recipes</button>
-          <button class="btn btn-outline-dark m-1" style="width: 12%; border: solid 5px; background-color: #C4EBFF" type="button">About</button>
-          <button class="btn btn-outline-dark m-2" style="width: 12%; border: solid 5px; background-color: #C4EBFF" type="button">Home</button>
-        </form>
-      </nav>
-
-        <form class="container-fluid justify-content-beginning">
-          <button class="btn btn-outline-dark" style="width: 13%; height: 17%; border: solid 5px; background-color: #FFFFFF">Search for Restaurants</button>
-          <button class="btn btn-outline-dark" style="width: 11%; height: 17%; border: solid 5px; background-color: #FFFFFF">Search by Location</button>
-          <button class="btn btn-outline-dark" style="width: 10%; height: 17%; border: solid 5px; background-color: #FFFFFF">Type of Cuisine</button>
-          <button class="btn btn-outline-dark" style="width: 12%; height: 17%; border: solid 5px; background-color: #FFFFFF">Trending Restaurants</button>
-        </form>
-  
-  
-</body>
 </html>
-
-<style>
-
-    .profile-tab
-    {
-      margin-left: 0px;
-      margin-right: 0px
-    }
-
-    .border-text-about-description
-    {
-        font-family: georgia;
-        font-size: 12pt;
-        font-style: italic; 
-        margin-top: 35px;
-        padding-left: 45px;
-        padding-right: 0px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .border-text
-    {
-        font-family: georgia;
-        font-size: 44pt;
-        font-style: italic; 
-        border-top: 4px solid;
-        border-bottom: 4px solid;
-        margin-right: 50px;
-    }
-    .media
-    {
-      margin-left: 40px;
-    }
-  
-    .btn-space
-    {
-        margin-right: 50px;
-    }
-    body
-    {
+<body>
+    <style>
+        body { /* CSS */
         background-image: url('restaurant_background.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-position: center;
+        background-position: top;
         background-size: cover;
         height: 100%;
-    }
-  
-  </style>
+        }
+
+        .border-text {
+              font-family: georgia;
+              font-size: 44pt;
+              font-style: italic; 
+              border-top: 4px solid;
+              border-bottom: 4px solid;
+              margin-right: 50px;
+              margin-left: 0px;
+              padding-left: 0px;
+        }
+        .btn-space
+        {
+            margin-right: 50px;
+            margin-left: 0px; 
+        }
+
+        footer {
+            text-align: left;
+            padding: 3px;
+            color: black;
+        }
+    </style>
+          <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid justify-content-sm-end">
+                <p><a href="#">Username</a></p>
+                <button class="btn-outline-dark" style="border: solid 3px;background-color: #C4EBFF;
+                border-radius: 10px; margin-left: 50px;">Profile Page</button>
+          </nav>
+          <nav><form class="container-fluid">
+            <span class="border-text"><font color = "#FFFFFF"> Yes!Place </font> </span>
+            <button class="btn btn-outline-dark btn-space" style="border: solid 5px;border-radius: 10px;
+            background-color: #C4EBFF"><a href="pet-restaurant.html">Restaurant</a></button>
+            <button class="btn btn-outline-dark" style="width: 150px; border: solid 3px;border-radius: 10px;
+            background-color: #C4EBFF" type="button"><a href="home.html" >Home</a></button>
+            <button class="btn btn-outline-dark" style="width: 150px; border: solid 3px;border-radius: 10px;
+            background-color: #C4EBFF" type="button"><a href="about.html" >Hotels</a></button>
+            <button class="btn btn-outline-dark" style="width: 150px; border: solid 3px;border-radius: 10px;
+             background-color: #C4EBFF" type="button"><a href="restaurant.html" >Pet Restaurant</a></button>
+            <button class="btn btn-outline-dark" style="width: 170px; border: solid 3px;border-radius: 10px;
+             background-color: #C4EBFF" type="button"><a href="recipe.html" >Cooking Recipes</a></button>
+            <button class="btn btn-outline-dark" style="width: 150px; border: solid 3px;border-radius: 10px;
+             background-color: #C4EBFF" type="button"><a href="hotel.html" >About</a></button>
+          </form></nav>
+
+          <div class="input-group m-3">
+            <input type="text" class="form-control-sm" placeholder="Seach for Restaurants" style="border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"style="border: dashed 3px;
+              border-radius: 10px;background-color:#C4EBFF">Button</button>
+            </div>
+            <input type="text" class="form-control-sm" placeholder="Seach for Location" style="border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"style="border: dashed 3px;
+              border-radius: 10px;background-color:#C4EBFF">Button</button>
+            </div>
+            </div>
+            
+
+
+            <div class="row">
+            <div class="col">
+              <div class="card-header"style="border: solid 3px;
+              border-radius: 10px;background-color:#C4EBFF">
+                Restaurants
+              </div>
+          <div class="card text-white bg-primary">
+            <div class="card-body"style="height: 21rem;border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              <img src="empty-recipe.jpg" class="card-img-left"  style="width: 18rem;">
+              <h5 class="card-title-right" style="color:black">Primary card title</h5>
+              <p class="card-text" style="color:black">Some quick example text to
+                 content.</p>
+            </div>
+          </div>
+          </div>
+          <div class="col">
+            <div class="card-header"style="border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              Reviews
+            </div>
+          <div class="card text-white bg-primary">
+            <div class="card-body"style="height: 21rem;border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              <img src="empty-profile.jpg" class="card-img-left"  style="width: 2rem;">
+              <p class="card-text" style="color:black">Primary card title</p>
+              <img src="empty-profile.jpg" class="card-img-left"  style="width: 2rem;">
+              <p class="card-text" style="color:black">Some quick example text to build on the card title</p>
+              <img src="empty-profile.jpg" class="card-img-left"  style="width: 2rem;">
+              <p class="card-text" style="color:black">Some quick example text to build on the card title</p>
+              <div class="input-group m-2">
+                <input type="text" class="form-control" placeholder="Add a Review" style="max-width: 150px;border: solid 3px;
+                border-radius: 10px;background-color:#C4EBFF">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button"style="border: dashed 3px;
+                  border-radius: 10px;background-color:#C4EBFF">Button</button>
+                </div>
+            </div>
+            </div>
+          </div>
+          </div>
+          <div class="col">
+          <div class="card-header"style="border: solid 3px;
+          border-radius: 10px;background-color:#C4EBFF">
+            Location
+          </div>
+          <div class="card text-white bg-primary">
+            <div class="card-body"style="height: 21rem;border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+           <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            style="border:0" allowfullscreen></iframe>          </div>
+            </div>
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col">
+          <div class="card text-white bg-primary">
+            <div class="card-body"style="height: 21rem;border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              <img src="empty-recipe.jpg" class="card-img-left"  style="width: 18rem;">
+              <h5 class="card-title-right" style="color:black">Primary card title</h5>
+              <p class="card-text" style="color:black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          </div>
+          <div class="col">
+          <div class="card text-white bg-primary">
+            <div class="card-body"style="height: 21rem;border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+              <img src="empty-profile.jpg" class="card-img-left"  style="width: 2rem;">
+              <p class="card-text" style="color:black">Primary card title</p>
+              <img src="empty-profile.jpg" class="card-img-left"  style="width: 2rem;">
+              <p class="card-text" style="color:black">Some quick example text to build on the card title</p>
+              <img src="empty-profile.jpg" class="card-img-left"  style="width: 2rem;">
+              <p class="card-text" style="color:black">Some quick example text to build on the card title</p>
+              <div class="input-group m-2">
+                <input type="text" class="form-control" placeholder="Add a Review" style="max-width: 150px;border: solid 3px;
+                border-radius: 10px;background-color:#C4EBFF">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button"style="border: dashed 3px;
+                  border-radius: 10px;background-color:#C4EBFF">Button</button>
+                </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="col">
+          <div class="card text-white bg-primary">
+            <div class="card-body"style="height: 21rem;border: solid 3px;
+            border-radius: 10px;background-color:#C4EBFF">
+             <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+              <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+            </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </body>
+          

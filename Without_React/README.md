@@ -16,8 +16,7 @@ COMPE-561 Term Project Group #1
 # Installation
 
 1. Clone the repository:
-git clone https://github.com/lbui8311/COMPE-561-Group-1.git
-
+git clone https://github.com/lbui8311/YesPlaces.git
 # Frontend (React)
 
 # Backend (Django)
