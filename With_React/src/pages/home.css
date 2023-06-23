@@ -31,6 +31,14 @@ body { /* CSS */
   width: 300px;
 }
 
+.btn {
+  background-color: transparent;
+  border: 0px;
+  border-width: 12%;
+  height: 50px;
+  width: 150px;
+}
+
 .btn1 {
   background-color: #C4EBFF;
   border: solid 5px;
