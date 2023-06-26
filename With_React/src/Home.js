@@ -84,9 +84,12 @@ const Home = () => {
       </div> */}
 
       <Container style={{textAlign: 'center'}}>
+      <label><br/><br/></label>
       <label style={{fontSize: 20, color: 'white', fontStyle: 'italic', margin: 20}}>City<br/></label> 
       <label style={{fontSize: 15, color: 'white', margin: 20}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br/> nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse <br/> cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, <br/> sunt in culpa qui officia deserunt mollit anim id est laborum.<br/></label>
+      <label><br/></label>
       <label style={{fontSize: 20, color: 'white', margin: 20}}>-----------------------------------------------------------<br/></label> 
+      <label><br/></label>
       <label 
         className="form-label"
         style={{fontSize: 25, backgroundColor: 'white', textAlign: 'center', fontFamily: 'Georgia', border: 'solid', borderWidth: 3}}
@@ -153,6 +156,7 @@ const Home = () => {
         
 
       </Container>
+      <Footer/>
 
         {/* <Routes>
           <Route/>  
