@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Navbar from './components/Navbar';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +9,7 @@ import dogpic2 from './components/dog-pic2.jpg';
 import catpic from './components/cat-pic.jpg';
 import dogpic3 from './components/dog-pic3.jpg';
 import ProfileTab from './components/Profiletab-A';
-import gradient from './components/gradient.jpg';
+// import gradient from './components/gradient.jpg';
 
 const About = () => {
   const [descriptions, setDescriptions] = useState([ 
@@ -47,8 +47,8 @@ return (
   backgroundPosition: 'center',
   WebkitBackgroundSize: 'cover',
   }}>
-  <ProfileTab />
-  <Navbar />
+  {/* <ProfileTab /> */}
+  {/* <Navbar /> */}
   <Descriptions descriptions={descriptions}/>
 </div>
 );

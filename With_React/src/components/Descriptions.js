@@ -6,7 +6,7 @@ function Descriptions({ descriptions })
     return (
       <>
         <div className="info-title">
-            <img src={titleAbout} style={{width: 300, height: 150, marginRight: 20,}}/>
+            {/* <img src={titleAbout} style={{width: 300, height: 150, marginRight: 20,}}/> */}
             <div className="mr-2">
                 <h2>Yes!Places</h2>
                 <p>Yes!Places was created for you. We take consideration that you may be a first time traveler, so everything may be overwhelming; ticket costs 
