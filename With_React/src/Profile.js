@@ -1,8 +1,8 @@
 import Navbar from "./components/Navbar";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Pages from "./components/Pages";
 import Profiletab from "./components/Profiletab-P";
-import picnic from "./components/picnic-pic.jpg";
+// import picnic from "./components/picnic-pic.jpg";
 import { useState } from 'react';
 
 const App = () => {
@@ -26,8 +26,8 @@ const App = () => {
       WebkitBackgroundSize: 'cover',
       }}>
         
-      <Profiletab addName={addPersonal}/>
-      <Navbar />
+      {/* <Profiletab addName={addPersonal}/>
+      <Navbar /> */}
       <Pages addPersonalInfo={addPersonal}/>
     </div>
   );

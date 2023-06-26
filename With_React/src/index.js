@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './custom.css';
 // import App from './App';
-import Home from './Home'
+// import Home from './Home'
 import Main from './Main'
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
