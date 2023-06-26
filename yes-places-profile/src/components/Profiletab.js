@@ -1,12 +1,9 @@
-function Profiletab()
+function Profiletab({addName})
 {
     return(
         <div className="row">
             <div className="col profile-name col-md-auto">
-            <p><a href="#">Username</a></p>
-            </div>
-            <div className="col">
-            <p><a href="#">Sign out</a></p>
+            <p>{addName.userName}</p>
             </div>
       </div>
     );

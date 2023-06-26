@@ -85,10 +85,10 @@
     border: 5px solid black;
     margin: 3px;
 
-    margin-left: 20px;
-
+    margin-left: 50px;
+    margin-top: 50px;
     border-radius: 10px;
-    width: 170px;
+    width: 570px;
     height: 50px;
     text-align: center;
     background-color: #FFF2CC;
@@ -150,6 +150,8 @@
     border-radius: 10px;
     width: 200px;
     height: 50px;
+    margin-top: 80px;
+    margin-left: 50px;
     background-color: #FFF2CC;
     color: black;
     font-size: 12pt;
@@ -164,3 +166,4 @@
 {
     width: 100px;
 }
+
