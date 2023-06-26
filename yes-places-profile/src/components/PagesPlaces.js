@@ -1,67 +1,107 @@
 import Form from 'react-bootstrap/Form';
 import React from 'react';
-import shop from './shop.jpg';
+import { useState } from 'react';
+import Radio from './Radio';
 
-function PagesPlaces() {
+
+function PagesPlaces({ onAdd }) {
+  const [place, setPlace] = useState('');
+  const [street, setStreet] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [placeType, setPlaceType] = useState('');
+  const [description, setDescription] = useState('');
+  const [link, setLink] = useState('');
+
+
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    if(!place && !street && !city) 
+    {
+      alert('Please add a name and full address')
+      return
+    }
+
+    
+
+    onAdd({ place, street, city, country, placeType, description, link })
+
+    setPlace('')
+    setStreet('')
+    setCity('')
+    setCountry('')
+    setPlaceType('')
+    setDescription('')
+    setLink('')
+  }
+
+
     return (
       <>
-        <div className="col">
-          <Form style={{width: 320,}}>
-            <Form.Group className="mb-3">
-              <Form.Label>Add a Place:</Form.Label>
-              <Form.Control type="Name of Place" placeholder="Name of Place" />
-            </Form.Group>
-          </Form>
-
-          <Form style={{width: 320,}}>
-            <Form.Group className="mb-3">
-              <Form.Label>Street Address:</Form.Label>
-              <Form.Control type="Street Address" placeholder="Street Address" />
-            </Form.Group>
-          </Form>
-
-          <Form style={{width: 320,}}>
-            <Form.Group className="mb-3">
-              <Form.Label>City:</Form.Label>
-              <Form.Control type="City" placeholder="City" />
-            </Form.Group>
-          </Form>
-
-          <Form style={{width: 320,}}>
-            <Form.Group className="mb-3">
-              <Form.Label>Country:</Form.Label>
-              <Form.Control type="Country" placeholder="Country" />
-            </Form.Group>
-          </Form>
-
-          
-          <Form style={{width: 320,}}>
+        <Form onSubmit={onSubmit}>
+          <div className="row">
+            <div className="col">
+            <Form style={{width: 320,}}>
               <Form.Group className="mb-3">
-                <Form.Label>Description:</Form.Label>
-                <Form.Control type="Description" placeholder="Description" style={{height: 150,}} />
+                <Form.Label>Add a Place:</Form.Label>
+                <Form.Control type="Name of Place" placeholder="Name of Place" value={place} onChange={(e) => setPlace(e.target.value)}/>
               </Form.Group>
-          </Form>
-        
-        </div>
-    
-        <div className="col">
-          <p>Pictures of Place:</p>
-          <img src={shop} alt="shop" style={{width: 300, height: 200,}}/>
+            </Form>
 
-        
-          <button className="btn-add-pic mb-4"> Add Photos </button>
+            <Form style={{width: 320,}}>
+              <Form.Group className="mb-3">
+                <Form.Label>Street Address:</Form.Label>
+                <Form.Control type="Street Address" placeholder="Street Address" value={street} onChange={(e) => setStreet(e.target.value)}/>
+              </Form.Group>
+            </Form>
+
+            <Form style={{width: 320,}}>
+              <Form.Group className="mb-3">
+                <Form.Label>City:</Form.Label>
+                <Form.Control type="City" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
+              </Form.Group>
+            </Form>
+
+            <Form style={{width: 320,}}>
+              <Form.Group className="mb-3">
+                <Form.Label>Country:</Form.Label>
+                <Form.Control type="Country" placeholder="Country" value={country} onChange={(e) => setCountry(e.target.value)} />
+              </Form.Group>
+            </Form>
+
+            
+            
           
+            </div>
+      
+            <div className="col">
+              <Form style={{width: 320,}}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Description:</Form.Label>
+                    <Form.Control type="Description" placeholder="Description" style={{height: 125,}} value={description} onChange={(e) => setDescription(e.target.value)}/>
+                  </Form.Group>
+              </Form>
 
-          <p>Select a Place:</p>
-           <form>
-              <input type="radio" id="html" name="fav_language" value="HTML"/>
-              <label htmlFor="Restaurant">Restaurant</label><br/>
-              <input type="radio" id="css" name="fav_language" value="CSS"/>
-              <label htmlFor="css">Pet Restaurant</label><br/>
-              <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
-              <label htmlFor="Pet Restaurant">Hotel</label>
-          </form> 
-       </div>
+
+              <Form style={{width: 320,}}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Link:</Form.Label>
+                    <Form.Control type="link" placeholder="Link to website" value={link} onChange={(e) => setLink(e.target.value)}/>
+                  </Form.Group>
+              </Form>
+              
+              <Form style={{width: 320,}}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Restaurant, Pet Restaurant, or Hotel?:</Form.Label>
+                    <Form.Control type="placeType" placeholder="Enter type" value={placeType} onChange={(e) => setPlaceType(e.target.value)}/>
+                  </Form.Group>
+              </Form>
+              </div>
+          </div>
+          <input type='submit' value="Add Place Info" className="btn-add"/>
+        </Form>
       </>
     );
   }

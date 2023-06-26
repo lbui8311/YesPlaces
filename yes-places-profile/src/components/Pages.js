@@ -1,8 +1,6 @@
-import PagesButtons from "./PagesButtons";
 import PagesPlaces from "./PagesPlaces";
 import PagesName from "./PagesName";
 import PagesRecipes from "./PagesRecipes";
-import { useState } from 'react';
 
 function Pages({ addPersonalInfo }) {
     return (
@@ -10,12 +8,12 @@ function Pages({ addPersonalInfo }) {
         <div className="row mt-2">
             <div className="col col-md-auto m-2"> 
                 <div className="row button-page">
-                    
+                   {/*Do not delete this space*/} 
                 </div>
            </div>
            <div className="co; col-md-auto m-2"> 
                 <div className="row place-page">
-                    <PagesPlaces/>
+                    <PagesPlaces onAdd={addPersonalInfo}/>
                 </div>
            </div>
 

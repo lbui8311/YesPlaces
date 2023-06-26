@@ -7,6 +7,7 @@ function PagesRecipes({ onAdd }) {
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
   const [location, setLocation] = useState('');
+  const [petFriendly, setPetFriendly] = useState(false);
 
 
 
@@ -20,12 +21,13 @@ function PagesRecipes({ onAdd }) {
       return
     }
 
-    onAdd({ name, ingredients, instructions, location })
+    onAdd({ name, ingredients, instructions, location, petFriendly })
 
     setName('')
     setIngredients('')
     setInstructions('')
     setLocation('')
+    setPetFriendly(false)
   }
     return (
       <>
@@ -74,8 +76,8 @@ function PagesRecipes({ onAdd }) {
               </div>
 
               <form>
-                  <input type="radio" id="pet-friendly" name="pet-freindly" value="pet-friendly"/>
-                  <label htmlFor="Restaurant">Pet-friendly</label><br/>
+                <label style={{marginRight: 20,}}>Pet Friendly</label>
+                <input type="checkbox" checked={petFriendly} value={petFriendly} onChange={(e) => setPetFriendly(e.currentTarget.checked)}/>
               </form>
 
               <input type='submit' value="Add Recipe" className="btn-recipe"/>

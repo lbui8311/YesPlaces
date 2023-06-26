@@ -12,7 +12,9 @@ const App = () => {
 ])
 
   const addPersonal = (personals) => {
-    console.log(personals)
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newPersonal = {id, ...personals}
+    setPersonal([...personal, newPersonal])
   }
 
   return (
@@ -24,7 +26,7 @@ const App = () => {
       WebkitBackgroundSize: 'cover',
       }}>
         
-      <Profiletab />
+      <Profiletab addName={addPersonal}/>
       <Navbar />
       <Pages addPersonalInfo={addPersonal}/>
     </div>

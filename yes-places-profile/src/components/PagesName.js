@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 function PagesName({ onAdd }) {
-  const [name, setName] = useState('');
+  const [userName, setUserName] = useState('');
   const [city, setCity] = useState('');
   const [pet, setPet] = useState('');
 
@@ -13,15 +13,15 @@ function PagesName({ onAdd }) {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(!name) 
+    if(!userName) 
     {
       alert('Please add a name')
       return
     }
 
-    onAdd({ name, city, pet })
+    onAdd({ userName, city, pet })
 
-    setName('')
+    setUserName('')
     setCity('')
     setPet('')
   }
@@ -36,7 +36,7 @@ function PagesName({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Change Display Name:</Form.Label>
-                      <Form.Control type="name" placeholder="Display Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                      <Form.Control type="name" placeholder="Display Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
