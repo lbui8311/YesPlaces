@@ -3,7 +3,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
-from .models import Question, Choice
+from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import *
+
+from .models import *
 
 # Get questions and display them
 def index(request):
@@ -43,3 +48,16 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+    
+
+
+class ReactView(APIView):
+   def get(self, request):
+      output = [{"username": output.username, "password": output.password}
+                for output in React.objects.all()]
+      return Response(output)
+   def post(self, request):
+      serializers = ReactSerializer(data=request.data)
+      if serializers.is_valid(raise_exception=True):
+         serializers.save()
+         return Response(serializers.data)

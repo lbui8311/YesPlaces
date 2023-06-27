@@ -16,3 +16,8 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+    
+    
+class React(models.Model):
+    username = models.CharField(max_length=30)
+    password = models.CharField(max_length=30)

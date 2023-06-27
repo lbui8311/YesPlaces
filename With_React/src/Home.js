@@ -119,7 +119,7 @@ const Home = () => {
         />
       </div>
       
-      <a href="#" style={{fontSize: 15}}> Password Recovery Link <br/></a>
+      <a href="/" style={{fontSize: 15}}> Password Recovery Link <br/></a>
       <input type='submit' value='Login!' className='btn' style={{width: 100, backgroundColor: 'white', textAlign: 'center',  border: 'solid', borderWidth: 3}} />
     </form >
         </Col>
@@ -160,6 +160,7 @@ const Home = () => {
       </Row>
     </Container>
 
+    <label><br/><br/><br/><br/><br/></label>
     <Footer />
     </>
   )
