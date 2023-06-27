@@ -17,6 +17,7 @@ import './home.css';
 // import Form from '../node_modules/react-bootstrap/Form'
 import Row from '../node_modules/react-bootstrap/Row'
 import Col from '../node_modules/react-bootstrap/Col'
+import axios from 'axios';
 
 
 const Home = () => {
@@ -60,6 +61,20 @@ const Home = () => {
   //   const data = await res.json()
 
   //   setUsers([...users, data])
+  // }
+
+  // state = {details: [],}
+
+  // componentDidMount() {
+  //   let data;
+  //   axios.get('http://localhost:8000')
+  //   .then(res => {
+  //     data = res.data;
+  //     this.setState({
+  //       details: data
+  //     });
+  //   })
+  //   .catch(err => { })
   // }
 
   return (

@@ -6,7 +6,12 @@ from django.urls import reverse
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import viewsets
+from rest_framework import permissions
+from django.contrib.auth.models import User
+from polls.serializers import UserSerializer
 from .serializers import *
+from rest_framework.permissions import AllowAny
 
 from .models import *
 
@@ -61,3 +66,11 @@ class ReactView(APIView):
       if serializers.is_valid(raise_exception=True):
          serializers.save()
          return Response(serializers.data)
+      
+
+
+class UserViewSet(viewsets.ModelViewSet):
+   queryset = User.objects.all().order_by('-date_joined')
+   serializer_class = UserSerializer
+   permission_classes = [permissions.AllowAny]
+      
