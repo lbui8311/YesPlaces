@@ -69,49 +69,12 @@ const Home = () => {
 
     useEffect(() => {
     const getUsers = async () => {
-      const tasksFromServer = await fetchUsers()
-      setUsers(tasksFromServer)
+      const usersFromServer = await fetchUsers()
+      setUsers(usersFromServer)
     }
 
     getUsers()
   }, [])
-
-  // useEffect(() => {
-  //   const fetchData = async() => {
-  //     const result = await fetch('http://127.0.0.1:8000/users/')
-  //     const jsonResult = await result.json();
-  //     setUsers(jsonResult)
-  //   }
-
-  //   fetchData();
-  // }, [])
-
-  // const submitUser = async() => {
-  //   const myData ={
-
-  //   }
-  //   const result = await fetch('http://127.0.0.1:8000/users/', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(myData)
-  //   })
-
-  //   const resultInJson = await result.json();
-  //   console.log(resultInJson)
-  // }
-
-
-  // useEffect(() => {
-  //   const fetchTasks = async () => {
-  //     const res = await fetch('http://localhost:8000/users/')
-  //     const data = await res.json()
-  //     console.log(data)
-  //   }
-
-  //   fetchTasks()
-  // }, [])
 
     // Fetch Users
   const fetchUsers = async () => {
@@ -144,40 +107,8 @@ const Home = () => {
     setUsers([...users, data])
   }
 
-  // state = {details: [],}
-
-  // componentDidMount() {
-  //   let data;
-  //   axios.get('http://localhost:8000')
-  //   .then(res => {
-  //     data = res.data;
-  //     this.setState({
-  //       details: data
-  //     });
-  //   })
-  //   .catch(err => { })
-  // }
-
   return (
     <>
-      {/* <Router> */}
-      {/* <div class="test">
-        <nav className ="bg-body-tertiary">
-          <form class="container-fluid justify-content-end" style={{textAlign: 'end'}}>
-            <button className="btn" style={{margin: 5}}>Username</button>
-            <button className="btn2" style={{margin: 10, justifyContent: 'end'}}><a href="profile">Profile</a></button>
-          </form>
-          <form className="container-fluid" href="#" >
-            <button className="btn0" style={{paddingTop:10}}> <span class="border-text">Yes!Places</span></button>
-            <button className="btn1" style={{margin: 30}}>Home</button>
-            <button className="btn2" style={{margin: 2}}>Restaurants</button>
-            <button className="btn2" style={{margin: 2}}>Pet Restaurants</button>
-            <button className="btn2" style={{margin: 2}}>Food Recipes</button>
-            <button className="btn2" style={{margin: 2}}>Hotels</button>
-            <button className="btn2" style={{margin: 2}}><a href="about">About</a></button>
-          </form>
-        </nav>
-      </div> */}
     <Container>
       <Row>
         <Col>
@@ -192,79 +123,23 @@ const Home = () => {
         <label 
         className="form-label"
         style={{fontSize: 25, backgroundColor: 'white', fontFamily: 'Georgia', border: 'solid', borderWidth: 3, marginTop: 50, width: 500}}
-        >Welcome Back!
-      </label>
-      {/* <form className='add-form' onSubmit={onSubmit}>
-      <div className='form-control'  style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
-        <input
-          type='text'
-          placeholder='Username'
-          style={{width: 200, textAlign: 'center'}}
-          // value={username}
-          // onChange={(e) => setUsers(e.target.value)}
-        />
-      </div>
-      <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
-        <input
-          type='Password'
-          placeholder='Password'
-          style={{width: 200, textAlign: 'center'}}
-          // value={password}
-          // onChange={(e) => setDay(e.target.value)}
-        />
-      </div>
-      
-      <a href="/" style={{fontSize: 15}}> Password Recovery Link <br/></a>
-      <input type='submit' value='Login!' className='btn' style={{width: 100, backgroundColor: 'white', textAlign: 'center',  border: 'solid', borderWidth: 3}} />
-    </form > */}
-        </Col>
-      </Row>
-      <Row>
-        <Col></Col>
-        <Col style={{textAlign: 'center'}}>
-        <label 
-        className="form-label"
-        style={{fontSize: 25, backgroundColor: 'white', textAlign: 'center', fontFamily: 'Georgia', border: 'solid', borderWidth: 3, width: 500}}
         >New User Registration!
       </label>
       {<AddUser onAdd={addUser}/>}
-
-      {/* <form className='add-form' onSubmit={onSubmit}> 
-      <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
-        <input
-          type='text'
-          placeholder='Username'
-          style={{width: 200, textAlign: 'center'}}
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
-        <input
-          type='password'
-          placeholder='Password'
-          style={{width: 200, textAlign: 'center'}}
-          value={password}
-          onChange={(e) => setPassowrd(e.target.value)}
-        />
-      </div>
-      <p style={{textAlign: 'center', backgroundColor: 'transparent'}}>Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</p>
-      <input type='submit' value='Sign up!' className='btn' style={{width: 100, backgroundColor: 'white',  border: 'solid', borderWidth: 3}}/>
-
-    </form> */}
         </Col>
       </Row>
     </Container>
 
-    <h2>Users:</h2>
+    <div style={{position: 'fixed', left: 0, right: 0, bottom: 100}}>
+    <h2>Users Registration List:</h2>
       {users.map(user =>
         <div key={user.id} className='users_item'>
           <p>{user.username}</p>
           <p>{user.password}</p>
         </div>)}
+        </div>
 
-    <label><br/><br/><br/><br/><br/></label>
-    <Footer />
+    <Footer/>
     </>
   )
 }
