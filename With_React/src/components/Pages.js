@@ -12,7 +12,7 @@ function Pages({ addPersonalInfo }) {
                 </div>
            </div>
            <div className="co; col-md-auto m-2"> 
-                <div className="row place-page">
+                <div className="row place-page" style={{backgroundColor: 'white'}}>
                     <PagesPlaces onAdd={addPersonalInfo}/>
                 </div>
            </div>

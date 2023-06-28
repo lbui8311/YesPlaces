@@ -36,7 +36,7 @@ function PagesName({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Change Display Name:</Form.Label>
-                      <Form.Control type="name" placeholder="Display Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
+                      <Form.Control type="userName" placeholder="Display Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
@@ -70,4 +70,3 @@ function PagesName({ onAdd }) {
   }
   
 export default PagesName;
-
