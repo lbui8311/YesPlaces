@@ -19,9 +19,7 @@ import Row from '../node_modules/react-bootstrap/Row'
 import Col from '../node_modules/react-bootstrap/Col'
 import axios from 'axios';
 
-
-const Home = ({onAdd}) => {
-  const [users, setUsers] = useState([])
+const AddUser = ({ onAdd}) => {
   const [username, setUsername] = useState('')
   const [password, setPassowrd] = useState('')
 
@@ -37,6 +35,37 @@ const Home = ({onAdd}) => {
     setUsername('')
     setPassowrd('')
   }
+
+  return (
+      <form className='add-form' onSubmit={onSubmit}> 
+      <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
+        <input
+          type='text'
+          placeholder='Username'
+          style={{width: 200, textAlign: 'center'}}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
+        <input
+          type='password'
+          placeholder='Password'
+          style={{width: 200, textAlign: 'center'}}
+          value={password}
+          onChange={(e) => setPassowrd(e.target.value)}
+        />
+      </div>
+      <p style={{textAlign: 'center', backgroundColor: 'transparent'}}>Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</p>
+      <input type='submit' value='Sign up!' className='btn' style={{width: 100, backgroundColor: 'white',  border: 'solid', borderWidth: 3}}/>
+
+    </form>
+  )
+}
+
+
+const Home = () => {
+  const [users, setUsers] = useState([])
 
     useEffect(() => {
     const getUsers = async () => {
@@ -94,7 +123,7 @@ const Home = ({onAdd}) => {
 
   // Fetch User
   const fetchUser = async (id) => {
-    const res = await fetch(`http://localhost:8000/users/${id}`)
+    const res = await fetch(`http://localhost:8000/users/${id}/`)
     const data = await res.json()
 
     return data
@@ -102,7 +131,7 @@ const Home = ({onAdd}) => {
 
    // Add User
   const addUser = async (user) => {
-    const res = await fetch('http://localhost:8000/users', {
+    const res = await fetch('http://localhost:8000/users/', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -149,7 +178,6 @@ const Home = ({onAdd}) => {
           </form>
         </nav>
       </div> */}
-  {/* {<onAdd={addUser}/>} */}
     <Container>
       <Row>
         <Col>
@@ -166,7 +194,7 @@ const Home = ({onAdd}) => {
         style={{fontSize: 25, backgroundColor: 'white', fontFamily: 'Georgia', border: 'solid', borderWidth: 3, marginTop: 50, width: 500}}
         >Welcome Back!
       </label>
-      <form className='add-form'>
+      {/* <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'  style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
         <input
           type='text'
@@ -188,7 +216,7 @@ const Home = ({onAdd}) => {
       
       <a href="/" style={{fontSize: 15}}> Password Recovery Link <br/></a>
       <input type='submit' value='Login!' className='btn' style={{width: 100, backgroundColor: 'white', textAlign: 'center',  border: 'solid', borderWidth: 3}} />
-    </form >
+    </form > */}
         </Col>
       </Row>
       <Row>
@@ -199,8 +227,9 @@ const Home = ({onAdd}) => {
         style={{fontSize: 25, backgroundColor: 'white', textAlign: 'center', fontFamily: 'Georgia', border: 'solid', borderWidth: 3, width: 500}}
         >New User Registration!
       </label>
-  
-      <form className='add-form'>
+      {<AddUser onAdd={addUser}/>}
+
+      {/* <form className='add-form' onSubmit={onSubmit}> 
       <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
         <input
           type='text'
@@ -222,7 +251,7 @@ const Home = ({onAdd}) => {
       <p style={{textAlign: 'center', backgroundColor: 'transparent'}}>Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</p>
       <input type='submit' value='Sign up!' className='btn' style={{width: 100, backgroundColor: 'white',  border: 'solid', borderWidth: 3}}/>
 
-    </form>
+    </form> */}
         </Col>
       </Row>
     </Container>
