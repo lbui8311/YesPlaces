@@ -20,48 +20,100 @@ import Col from '../node_modules/react-bootstrap/Col'
 import axios from 'axios';
 
 
-const Home = () => {
+const Home = ({onAdd}) => {
   const [users, setUsers] = useState([])
+  const [username, setUsername] = useState('')
+  const [password, setPassowrd] = useState('')
 
-  //   useEffect(() => {
-  //   const getUsers = async () => {
-  //     const tasksFromServer = await fetchUsers()
-  //     setUsers(tasksFromServer)
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    if(!username) {
+      alert('Please add a username and/or password')
+    }
+
+    onAdd({username, password})
+
+    setUsername('')
+    setPassowrd('')
+  }
+
+    useEffect(() => {
+    const getUsers = async () => {
+      const tasksFromServer = await fetchUsers()
+      setUsers(tasksFromServer)
+    }
+
+    getUsers()
+  }, [])
+
+  // useEffect(() => {
+  //   const fetchData = async() => {
+  //     const result = await fetch('http://127.0.0.1:8000/users/')
+  //     const jsonResult = await result.json();
+  //     setUsers(jsonResult)
   //   }
 
-  //   getUsers()
+  //   fetchData();
   // }, [])
 
-  //   // Fetch Users
-  // const fetchUsers = async () => {
-  //   const res = await fetch('http://localhost:5000/users')
-  //   const data = await res.json()
+  // const submitUser = async() => {
+  //   const myData ={
 
-  //   return data
-  // }
-
-  // // Fetch User
-  // const fetchUser = async (id) => {
-  //   const res = await fetch(`http://localhost:5000/users/${id}`)
-  //   const data = await res.json()
-
-  //   return data
-  // }
-
-  //  // Add User
-  // const addUser = async (user) => {
-  //   const res = await fetch('http://localhost:5000/users', {
+  //   }
+  //   const result = await fetch('http://127.0.0.1:8000/users/', {
   //     method: 'POST',
   //     headers: {
-  //       'Content-type': 'application/json',
+  //       'Content-Type': 'application/json'
   //     },
-  //     body: JSON.stringify(user),
+  //     body: JSON.stringify(myData)
   //   })
 
-  //   const data = await res.json()
-
-  //   setUsers([...users, data])
+  //   const resultInJson = await result.json();
+  //   console.log(resultInJson)
   // }
+
+
+  // useEffect(() => {
+  //   const fetchTasks = async () => {
+  //     const res = await fetch('http://localhost:8000/users/')
+  //     const data = await res.json()
+  //     console.log(data)
+  //   }
+
+  //   fetchTasks()
+  // }, [])
+
+    // Fetch Users
+  const fetchUsers = async () => {
+    const res = await fetch('http://localhost:8000/users/')
+    const data = await res.json()
+
+    return data
+  }
+
+  // Fetch User
+  const fetchUser = async (id) => {
+    const res = await fetch(`http://localhost:8000/users/${id}`)
+    const data = await res.json()
+
+    return data
+  }
+
+   // Add User
+  const addUser = async (user) => {
+    const res = await fetch('http://localhost:8000/users', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+
+    const data = await res.json()
+
+    setUsers([...users, data])
+  }
 
   // state = {details: [],}
 
@@ -97,7 +149,7 @@ const Home = () => {
           </form>
         </nav>
       </div> */}
-
+  {/* {<onAdd={addUser}/>} */}
     <Container>
       <Row>
         <Col>
@@ -121,7 +173,7 @@ const Home = () => {
           placeholder='Username'
           style={{width: 200, textAlign: 'center'}}
           // value={username}
-          // onChange={(e) => setText(e.target.value)}
+          // onChange={(e) => setUsers(e.target.value)}
         />
       </div>
       <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
@@ -129,7 +181,7 @@ const Home = () => {
           type='Password'
           placeholder='Password'
           style={{width: 200, textAlign: 'center'}}
-          // value={day}
+          // value={password}
           // onChange={(e) => setDay(e.target.value)}
         />
       </div>
@@ -154,8 +206,8 @@ const Home = () => {
           type='text'
           placeholder='Username'
           style={{width: 200, textAlign: 'center'}}
-          // value={username}
-          // onChange={(e) => setText(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div className='form-control' style={{backgroundColor: 'transparent', borderWidth: 0, borderRadius: 50}}>
@@ -163,8 +215,8 @@ const Home = () => {
           type='password'
           placeholder='Password'
           style={{width: 200, textAlign: 'center'}}
-          // value={day}
-          // onChange={(e) => setDay(e.target.value)}
+          value={password}
+          onChange={(e) => setPassowrd(e.target.value)}
         />
       </div>
       <p style={{textAlign: 'center', backgroundColor: 'transparent'}}>Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</p>
@@ -174,6 +226,13 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
+
+    <h2>Users:</h2>
+      {users.map(user =>
+        <div key={user.id} className='users_item'>
+          <p>{user.username}</p>
+          <p>{user.password}</p>
+        </div>)}
 
     <label><br/><br/><br/><br/><br/></label>
     <Footer />

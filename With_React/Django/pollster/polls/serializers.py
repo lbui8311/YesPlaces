@@ -11,4 +11,4 @@ class ReactSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'password']
+        fields = ['id','username', 'password']
