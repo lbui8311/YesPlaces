@@ -37,7 +37,7 @@ const YesPlacesAbout = () => {
             </div>
         </div>
         <div className="info">
-            <img src={dogpic1} style={{width: 200, height: 100, marginRight: 20,}}/>
+            <img src={dogpic2} style={{width: 200, height: 100, marginRight: 20,}}/>
             <div className="mb-5">
                 <h2>Ubaldo Gonzalez</h2>
                 <p>Pioneer of Yes!Places, one of the main muscles in the construction</p>
