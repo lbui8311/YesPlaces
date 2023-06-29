@@ -12,32 +12,6 @@ import ProfileTab from './components/Profiletab-A';
 // import gradient from './components/gradient.jpg';
 
 const About = () => {
-  const [descriptions, setDescriptions] = useState([ 
-    {
-      id: 1,
-      photo: dogpic1,
-      name: 'Luan bui',
-      description: 'CEO and founder of Yes!Places, his vision was to create something efficient to help other travel',
-    },
-    {
-      id: 2,
-      photo: dogpic2,
-      name: 'Ubaldo Gonzalez',
-      description: 'Pioneer of Yes!Places, one of the main muscles in the construction',
-    },
-    {
-      id: 3,
-      photo: catpic,
-      name: 'Sara Pirasteh',
-      description: 'Creatist and designer of Yes!Places, provided a colorful pathway for users',
-    },
-    {
-      id: 4,
-      photo: dogpic3,
-      name: 'Abraham Garcia',
-      description: 'He just saw the ad and hopped along for the ride.',
-    },
-])
 
 return (
 <div style={{ 
@@ -50,7 +24,7 @@ return (
   {/* <ProfileTab /> */}
   {/* <Navbar /> */}
   {/*<Descriptions descriptions={descriptions}/>*/}
-  <div className="info-title">
+  <div className="info-title" style={{marginLeft: 20}}>
             
     <div className="mr-2">
       <h2>Yes!Places</h2>
@@ -61,28 +35,28 @@ return (
     </div>
     </div>
 
-    <div className="info">
+    <div className="info" style={{marginLeft: 40}}>
      <img src={dogpic1} style={{width: 200, height: 100, marginRight: 20,}}/>
         <div className="mb-5">
            <h2>Luan Bui</h2>
               <p>CEO and founder of Yes!Places, his vision was to create something efficient to help other travel</p>
          </div>
         </div>
-        <div className="info">
+        <div className="info" style={{marginLeft: 40}}>
            <img src={dogpic2} style={{width: 200, height: 100, marginRight: 20,}}/>
             <div className="mb-5">
               <h2>Ubaldo Gonzalez</h2>
                 <p>Pioneer of Yes!Places, one of the main muscles in the construction</p>
              </div>
             </div>
-            <div className="info">
+            <div className="info" style={{marginLeft: 40}}>
                 <img src={catpic} style={{width: 200, height: 100, marginRight: 20,}}/>
                 <div className="mb-5">
                     <h2>Sara Pirasteh</h2>
                     <p>Creatist and designer of Yes!Places, provided a colorful pathway for users</p>
                 </div>
             </div>
-            <div className="info">
+            <div className="info" style={{marginLeft: 40}}>
                 <img src={dogpic3} style={{width: 200, height: 100, marginRight: 20,}}/>
                 <div className="mb-5">
                     <h2>Abraham Garcia</h2>
