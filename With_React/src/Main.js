@@ -6,6 +6,8 @@ import About from './About'
 import Profile from './Profile'
 import Restaurant from './Restaurant'
 import Hotel from './Hotel'
+import PetRestaurant from './PetRestaurant'
+import Recipe from './Recipe'
 
 const Main = () => {
   return (
@@ -25,6 +27,8 @@ const Main = () => {
         <Routes>
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/restaurant' element={<Restaurant />} />
+          <Route exact path='/pet-restaurant' element={<PetRestaurant />} />
+          <Route exact path='/recipe' element={<Recipe />} />
           <Route exact path='/hotel' element={<Hotel />} />
           <Route exact path='/profile' element={<Profile />} />
           <Route exact path='/about' element={<About />} />

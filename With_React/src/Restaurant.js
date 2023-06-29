@@ -3,6 +3,7 @@ import Row from '../node_modules/react-bootstrap/Row'
 import Col from '../node_modules/react-bootstrap/Col'
 import Container from '../node_modules/react-bootstrap/Container'
 import recipe from './components/empty-recipe.jpg'
+import Photo1 from './components/res1.jpg'
 
 
 function Restaurant() {
@@ -25,7 +26,7 @@ function Restaurant() {
       <Row>
       <Col>
         <label style={{textAlign: 'left', backgroundColor: 'white', width: 400, height: 250, fontStyle: 'semibold', marginTop: 30, borderRadius: 20}}>
-          <img src={recipe} style={{width: 200, height: 125, marginRight: 20,padding: 10}}/>
+          <img src={Photo1} style={{width: 250, height: 200, marginRight: 20,padding: 10}}/>
           Restaurant #1
           <p style={{padding: 10}}>Some information about this place</p>
           </label>

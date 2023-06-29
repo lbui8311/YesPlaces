@@ -17,3 +17,19 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Restaurant
         fields = ['id', 'name', 'review']
+
+class PetRestaurantSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = PetRestaurant
+        fields = ['id', 'name', 'review']
+
+
+class RecipeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Recipe
+        fields = ['id', 'name', 'review']
+
+class HotelSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Hotel
+        fields = ['id', 'name', 'review']

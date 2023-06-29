@@ -24,4 +24,16 @@ class React(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=30)
-    review = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
+class PetRestaurant(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
+class Recipe(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)

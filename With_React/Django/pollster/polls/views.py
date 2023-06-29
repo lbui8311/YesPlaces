@@ -80,5 +80,20 @@ class RestaurantViewSet(viewsets.ModelViewSet):
    serializer_class = RestaurantSerializer
    permission_classes = [permissions.AllowAny]
 
+class PetRestaurantViewSet(viewsets.ModelViewSet):
+   queryset = PetRestaurant.objects.all().order_by('-id')
+   serializer_class = PetRestaurantSerializer
+   permission_classes = [permissions.AllowAny]
+
+class RecipeViewSet(viewsets.ModelViewSet):
+   queryset = Recipe.objects.all().order_by('-id')
+   serializer_class = RecipeSerializer
+   permission_classes = [permissions.AllowAny]
+
+class HotelViewSet(viewsets.ModelViewSet):
+   queryset = Hotel.objects.all().order_by('-id')
+   serializer_class = HotelSerializer
+   permission_classes = [permissions.AllowAny]
+
 
       

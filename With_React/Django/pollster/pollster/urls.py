@@ -23,6 +23,10 @@ from polls import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'restaurants', views.RestaurantViewSet)
+router.register(r'pet-restaurants', views.PetRestaurantViewSet)
+router.register(r'recipes', views.RecipeViewSet)
+router.register(r'hotels', views.HotelViewSet)
+
 
 urlpatterns = [
     # path('', include('pages.urls')),
