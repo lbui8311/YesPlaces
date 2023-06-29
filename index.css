@@ -1,0 +1,28 @@
+.page-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url('petplacebg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+} 
+
+.card-layout {
+  border: solid 3px;
+  max-width: auto;
+  border-radius: 10px;
+  background-color:#C4EBFF;
+}
+
+.btn {
+  display: left-inline-block;
+  width: 150px;
+  border: solid 3px;
+  border-radius: 10px;
+  background-color: #C4EBFF;
+  padding: 10px 20px;
+  margin: 2;
+  
+  text-decoration: none;
+  font-family: inherit;
+}
