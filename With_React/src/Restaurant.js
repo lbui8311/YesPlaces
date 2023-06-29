@@ -25,7 +25,7 @@ function Restaurant() {
       <Row>
       <Col>
         <label style={{textAlign: 'left', backgroundColor: 'white', width: 400, height: 250, fontStyle: 'semibold', marginTop: 30, borderRadius: 20}}>
-        <img src={recipe} style={{width: 200, height: 125, marginRight: 20,padding: 10}}/>
+          <img src={recipe} style={{width: 200, height: 125, marginRight: 20,padding: 10}}/>
           Restaurant #1
           <p style={{padding: 10}}>Some information about this place</p>
           </label>

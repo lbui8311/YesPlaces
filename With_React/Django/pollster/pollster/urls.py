@@ -22,11 +22,12 @@ from polls import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
+router.register(r'restaurants', views.RestaurantViewSet)
 
 urlpatterns = [
     # path('', include('pages.urls')),
     path('',include(router.urls)),
-    path('polls/', include('polls.urls')),
+    # path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('', ReactView.as_view(), name="Yes!Places"),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))

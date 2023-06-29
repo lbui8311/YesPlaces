@@ -12,3 +12,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['id','username', 'password']
+
+class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Restaurant
+        fields = ['id', 'name', 'review']

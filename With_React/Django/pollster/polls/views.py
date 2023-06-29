@@ -10,6 +10,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from django.contrib.auth.models import User
 from polls.serializers import UserSerializer
+from polls.serializers import RestaurantSerializer
 from .serializers import *
 from rest_framework.permissions import AllowAny
 
@@ -73,4 +74,11 @@ class UserViewSet(viewsets.ModelViewSet):
    queryset = User.objects.all().order_by('-date_joined')
    serializer_class = UserSerializer
    permission_classes = [permissions.AllowAny]
+
+class RestaurantViewSet(viewsets.ModelViewSet):
+   queryset = Restaurant.objects.all().order_by('-id')
+   serializer_class = RestaurantSerializer
+   permission_classes = [permissions.AllowAny]
+
+
       

@@ -21,3 +21,7 @@ class Choice(models.Model):
 class React(models.Model):
     username = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=30)
