@@ -1,11 +1,14 @@
-import PagesRecipes from './components/PagesRecipes';
-import PagesName from './components/PagesName';
-import PagesPlaces from './components/PagesPlaces';
+// import Navbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import picnic from "./components/picnic-pic.jpg"
+import Pages from "./components/Pages";
+import Profiletab from "./components/Profiletab-P";
+// import picnic from "./components/picnic-pic.jpg";
 import { useState, useEffect } from 'react';
+import PagesPlaces from "./components/PagesPlaces";
+import PagesName from "./components/PagesName";
+import PagesRecipes from "./components/PagesRecipes";
 
-const YesPlacesProfile = () => {
+const Profile = () => {
   const [personal, setPersonal] = useState([])
 
   
@@ -73,18 +76,18 @@ const YesPlacesProfile = () => {
                 </div>
            </div>
            <div className="co; col-md-auto m-2"> 
-                <div className="row place-page" style={{marginTop: 40, backgroundColor: 'white', padding: 20, borderRadius: 20}}>
+                <div className="row place-page" style={{marginTop: 40, padding: 20, borderRadius: 20, backgroundColor: '#C4EBFF', border: '2px solid black'}}>
                     <PagesPlaces onAdd={addPersonalInfo}/>
                 </div>
            </div>
 
-           <div className="col col-md-auto " style={{marginTop: 50, backgroundColor: 'white', padding: 20, borderRadius: 20, height: 425}}>
+           <div className="col col-md-auto" style={{marginTop: 40,}} >
 
-                {/* <div className="row name-page mt-2" style={{marginTop: 100}}>
+                <div className="row name-page mt-2" style={{padding: 20, borderRadius: 20, height: 250, backgroundColor: '#C4EBFF', border: '2px solid black'}}>
                   <PagesName onAdd={addPersonalInfo} />
-                </div> */}
+                </div>
 
-                <div className="row recipe-page mt-1">
+                <div className="row recipe-page mt-1" style={{ padding: 20, borderRadius: 20, height: 420, backgroundColor: '#C4EBFF', border: '2px solid black'}}>
                   <PagesRecipes onAdd={addPersonalInfo}/>
                 </div>
            </div>
@@ -93,4 +96,4 @@ const YesPlacesProfile = () => {
   );
 }
 
-export default YesPlacesProfile;
+export default Profile;

@@ -63,7 +63,8 @@ function PagesName({ onAdd }) {
             </div>
           </div>
 
-          <input type='submit' value="Add Profile Info" className="btn-add-prof-pic"/>
+          <input type='submit' value="Add Profile Info" className="btn-add-prof-pic"
+          style={{width: 320, border: '3px solid black', borderRadius: '5px', backgroundColor: '#A8CFFF'}}/>
         </Form>
       </>
     );

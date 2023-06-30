@@ -45,7 +45,7 @@ function PagesPlaces({ onAdd }) {
             <div className="col">
             <Form style={{width: 320,}}>
               <label>Picture of the Place:</label>
-            <img src={shop} style={{width: 200, height: 125, marginRight: 20,}}/>
+            <img src={shop} style={{width: 200, height: 125, marginRight: 20,}} alt='shop'/>
 
               <Form.Group className="mb-3">
                 <Form.Label>Add a Place:</Form.Label>
@@ -101,7 +101,8 @@ function PagesPlaces({ onAdd }) {
                     <Form.Control type="placeType" placeholder="Enter type" value={placeType} onChange={(e) => setPlaceType(e.target.value)}/>
                   </Form.Group>
               </Form>
-              <input type='submit' value="Add Place Info" className="btn-add"/>
+              <input type='submit' value="Add Place Info" className="btn-add"
+              style={{width: 320, border: '3px solid black', borderRadius: '5px', backgroundColor: '#A8CFFF'}}/>
 
               </div>
           </div>

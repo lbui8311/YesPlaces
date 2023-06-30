@@ -36,7 +36,7 @@ function PagesRecipes({ onAdd }) {
               <div className="row">
                 <Form style={{width: 320,}}>
                   <label>Sample of Food Picture:</label>
-                <img src={recipe} style={{width: 250, height: 125, marginRight: 20,}}/>
+                <img src={recipe} style={{width: 250, height: 125, marginRight: 20,}} alt='recipe'/>
 
                     <Form.Group className="mb-3">
                       <Form.Label>Name of Recipe:</Form.Label>
@@ -77,7 +77,8 @@ function PagesRecipes({ onAdd }) {
                   <input type="radio" id="pet-friendly" name="pet-freindly" value="pet-friendly"/>
                   <label htmlFor="Restaurant" style={{marginBottom: 10}}>Pet-friendly</label><br/>
               </form>
-              <input type='submit' value="Add Recipe" className="btn-recipe"/>
+              <input type='submit' value="Add Recipe" className="btn-recipe"
+              style={{width: 295, border: '3px solid black', borderRadius: '5px', backgroundColor: '#A8CFFF'}}/>
             </div>
           </div>
 
