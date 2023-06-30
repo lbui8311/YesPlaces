@@ -36,7 +36,7 @@ function PagesName({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Change Display Name:</Form.Label>
-                      <Form.Control type="name" placeholder="Display Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
+                      <Form.Control type="userName" placeholder="Display Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
@@ -63,11 +63,11 @@ function PagesName({ onAdd }) {
             </div>
           </div>
 
-          <input type='submit' value="Add Profile Info" className="btn-add-prof-pic"/>
+          <input type='submit' value="Add Profile Info" className="btn-add-prof-pic"
+          style={{width: 320, border: '3px solid black', borderRadius: '5px', backgroundColor: '#A8CFFF'}}/>
         </Form>
       </>
     );
   }
   
 export default PagesName;
-
