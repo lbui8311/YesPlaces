@@ -1,13 +1,13 @@
 import Form from 'react-bootstrap/Form';
 import React from 'react';
 import { useState } from 'react';
+import recipe from './empty-recipe.jpg'
 
 function PagesRecipes({ onAdd }) {
-  const [name, setName] = useState('');
+  const [recipeName, setRecipeName] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
   const [location, setLocation] = useState('');
-  const [petFriendly, setPetFriendly] = useState(false);
 
 
 
@@ -15,19 +15,18 @@ function PagesRecipes({ onAdd }) {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(!name) 
+    if(!recipeName) 
     {
-      alert('Please add a name')
+      alert('Please add a recipe name')
       return
     }
 
-    onAdd({ name, ingredients, instructions, location, petFriendly })
+    onAdd({ recipeName, ingredients, instructions, location })
 
-    setName('')
+    setRecipeName('')
     setIngredients('')
     setInstructions('')
     setLocation('')
-    setPetFriendly(false)
   }
     return (
       <>
@@ -36,9 +35,12 @@ function PagesRecipes({ onAdd }) {
             <div className="col">
               <div className="row">
                 <Form style={{width: 320,}}>
+                  <label>Sample of Food Picture:</label>
+                <img src={recipe} style={{width: 250, height: 125, marginRight: 20,}}/>
+
                     <Form.Group className="mb-3">
                       <Form.Label>Name of Recipe:</Form.Label>
-                      <Form.Control type="Name of Recipe" placeholder="Name of Recipe" value={name} onChange={(e) => setName(e.target.value)} />
+                      <Form.Control type="Name of Recipe" placeholder="Name of Recipe" value={recipeName} onChange={(e) => setRecipeName(e.target.value)} />
                     </Form.Group>
                 </Form>
               </div>
@@ -51,8 +53,10 @@ function PagesRecipes({ onAdd }) {
                     </Form.Group>
                 </Form>
               </div>
-
-              <div className="row">
+            </div>
+            
+            <div className="col col-md-auto">
+            <div className="row">
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Instructions:</Form.Label>
@@ -60,12 +64,6 @@ function PagesRecipes({ onAdd }) {
                     </Form.Group>
                 </Form>
               </div>
-
-              
-
-            </div>
-
-            <div className="col col-md-auto">
             <div className="row">
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
@@ -76,11 +74,11 @@ function PagesRecipes({ onAdd }) {
               </div>
 
               <form>
-                <label style={{marginRight: 20,}}>Pet Friendly</label>
-                <input type="checkbox" checked={petFriendly} value={petFriendly} onChange={(e) => setPetFriendly(e.currentTarget.checked)}/>
+                  <input type="radio" id="pet-friendly" name="pet-freindly" value="pet-friendly"/>
+                  <label htmlFor="Restaurant" style={{marginBottom: 10}}>Pet-friendly</label><br/>
               </form>
-
-              <input type='submit' value="Add Recipe" className="btn-recipe"/>
+              <input type='submit' value="Add Recipe" className="btn-recipe"
+              style={{width: 295, border: '3px solid black', borderRadius: '5px', backgroundColor: '#A8CFFF'}}/>
             </div>
           </div>
 

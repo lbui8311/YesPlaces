@@ -1,13 +1,13 @@
 import Form from 'react-bootstrap/Form';
 import React from 'react';
 import { useState } from 'react';
-import Radio from './Radio';
+import shop from './shop.jpg'
 
 
 function PagesPlaces({ onAdd }) {
   const [place, setPlace] = useState('');
   const [street, setStreet] = useState('');
-  const [city, setCity] = useState('');
+  const [cityAddress, setCityAddress] = useState('');
   const [country, setCountry] = useState('');
   const [placeType, setPlaceType] = useState('');
   const [description, setDescription] = useState('');
@@ -18,7 +18,7 @@ function PagesPlaces({ onAdd }) {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(!place && !street && !city) 
+    if(!place && !street && !cityAddress) 
     {
       alert('Please add a name and full address')
       return
@@ -26,11 +26,11 @@ function PagesPlaces({ onAdd }) {
 
     
 
-    onAdd({ place, street, city, country, placeType, description, link })
+    onAdd({ place, street, cityAddress, country, placeType, description, link })
 
     setPlace('')
     setStreet('')
-    setCity('')
+    setCityAddress('')
     setCountry('')
     setPlaceType('')
     setDescription('')
@@ -44,6 +44,9 @@ function PagesPlaces({ onAdd }) {
           <div className="row">
             <div className="col">
             <Form style={{width: 320,}}>
+              <label>Picture of the Place:</label>
+            <img src={shop} style={{width: 200, height: 125, marginRight: 20,}}/>
+
               <Form.Group className="mb-3">
                 <Form.Label>Add a Place:</Form.Label>
                 <Form.Control type="Name of Place" placeholder="Name of Place" value={place} onChange={(e) => setPlace(e.target.value)}/>
@@ -60,7 +63,7 @@ function PagesPlaces({ onAdd }) {
             <Form style={{width: 320,}}>
               <Form.Group className="mb-3">
                 <Form.Label>City:</Form.Label>
-                <Form.Control type="City" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
+                <Form.Control type="CityAddress" placeholder="City Address" value={cityAddress} onChange={(e) => setCityAddress(e.target.value)}/>
               </Form.Group>
             </Form>
 
@@ -98,9 +101,11 @@ function PagesPlaces({ onAdd }) {
                     <Form.Control type="placeType" placeholder="Enter type" value={placeType} onChange={(e) => setPlaceType(e.target.value)}/>
                   </Form.Group>
               </Form>
+              <input type='submit' value="Add Place Info" className="btn-add"
+              style={{width: 320, border: '3px solid black', borderRadius: '5px', backgroundColor: '#A8CFFF'}}/>
+
               </div>
           </div>
-          <input type='submit' value="Add Place Info" className="btn-add"/>
         </Form>
       </>
     );
