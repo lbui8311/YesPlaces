@@ -3,7 +3,18 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
-from .models import Question, Choice
+from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import viewsets
+from rest_framework import permissions
+from django.contrib.auth.models import User
+from polls.serializers import UserSerializer
+from polls.serializers import RestaurantSerializer
+from .serializers import *
+from rest_framework.permissions import AllowAny
+
+from .models import *
 
 # Get questions and display them
 def index(request):
@@ -43,3 +54,14 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+    
+
+class ProfileViewSet(viewsets.ModelViewSet):
+   queryset = Profile.objects.all().order_by('-id')
+   serializer_class = ProfileSerializer
+   permission_classes = [permissions.AllowAny]
+
+
+
+
+      

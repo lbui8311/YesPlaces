@@ -16,3 +16,23 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+class Profile(models.Model):
+    placeName = models.CharField(max_length=30)
+    placeAddress = models.CharField(max_length=100)
+    placeCity = models.CharField(max_length=100)
+    placeCountry = models.CharField(max_length=100)
+    placeDescription = models.CharField(max_length=256)
+    placeLink = models.CharField(max_length=100)
+    placeType = models.CharField(max_length=50)
+
+    profileName = models.CharField(max_length=100)
+    profileCity = models.CharField(max_length=100)
+    profilePetName = models.CharField(max_length=100)
+
+    recipeName = models.CharField(max_length=100)
+    recipeIngredients = models.CharField(max_length=255)
+    recipeInstructions = models.CharField(max_length=255)
+    recipeLocation = models.CharField(max_length=100)
+
