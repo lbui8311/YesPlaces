@@ -43,3 +43,19 @@ class Profile(models.Model):
     profileCity = models.CharField("Enter Location:", max_length=100)
     profilePetName = models.CharField("Pet Name:", max_length=100)
 
+class ProfilePlace(models.Model):
+    placeName = models.CharField("Add a Place:", max_length=100)
+    placeAddress = models.CharField("Street Address:", max_length=100)
+    placeCity = models.CharField("City Address:", max_length=100)
+    placeCountry = models.CharField("Country:", max_length=100)
+    placeDescription = models.CharField("Pet Name:", max_length=255)
+    placeLink = models.CharField("Link:", max_length=100)
+    placeType = models.CharField("Restaurant, Pet Restaurant, or Hotel?:", max_length=100)
+
+class ProfileRecipe(models.Model):
+    recipeName = models.CharField("Add a Place:", max_length=100)
+    recipeIngredients = models.CharField("Street Address:", max_length=100)
+    recipeInstructions = models.CharField("City Address:", max_length=100)
+    recipeLocation = models.CharField("Country:", max_length=100)
+    recipePetFriendly = models.BooleanField("Pet-friendly:", False)
+

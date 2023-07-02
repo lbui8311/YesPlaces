@@ -5,9 +5,10 @@ import recipe from './empty-recipe.jpg'
 
 function PagesRecipes({ onAdd }) {
   const [recipeName, setRecipeName] = useState('');
-  const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
-  const [location, setLocation] = useState('');
+  const [recipeIngredients, setRecipeIngredients] = useState('');
+  const [recipeInstructions, setRecipeInstructions] = useState('');
+  const [recipeLocation, setRecipeLocation] = useState('');
+  const [recipePetFriendly, setRecipePetFriendly] = useState(false);
 
 
 
@@ -21,12 +22,13 @@ function PagesRecipes({ onAdd }) {
       return
     }
 
-    onAdd({ recipeName, ingredients, instructions, location })
+    onAdd({ recipeName, recipeIngredients, recipeInstructions, recipeLocation, recipePetFriendly })
 
     setRecipeName('')
-    setIngredients('')
-    setInstructions('')
-    setLocation('')
+    setRecipeIngredients('')
+    setRecipeInstructions('')
+    setRecipeLocation('')
+    setRecipePetFriendly(false)
   }
     return (
       <>
@@ -49,7 +51,7 @@ function PagesRecipes({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Ingredients:</Form.Label>
-                      <Form.Control type="Ingredients" placeholder="Ingredients" value={ingredients} onChange={(e) => setIngredients(e.target.value)} />
+                      <Form.Control type="Ingredients" placeholder="Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)} />
                     </Form.Group>
                 </Form>
               </div>
@@ -60,7 +62,7 @@ function PagesRecipes({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Instructions:</Form.Label>
-                      <Form.Control type="Instructions" placeholder="Steps" style={{height: 180,}} value={instructions} onChange={(e) => setInstructions(e.target.value)}/>
+                      <Form.Control type="Instructions" placeholder="Steps" style={{height: 180,}} value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
@@ -68,13 +70,13 @@ function PagesRecipes({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Recipe Location:</Form.Label>
-                      <Form.Control type="recipe-location" placeholder="Where it is sold" value={location} onChange={(e) => setLocation(e.target.value)} />
+                      <Form.Control type="recipe-location" placeholder="Where it is sold" value={recipeLocation} onChange={(e) => setRecipeLocation(e.target.value)} />
                     </Form.Group>
                 </Form>
               </div>
 
               <form>
-                  <input type="radio" id="pet-friendly" name="pet-freindly" value="pet-friendly"/>
+                  <input type="radio" id="pet-friendly" name="pet-freindly" value={recipePetFriendly} onChange={(e) => setRecipePetFriendly(e.target.value)}/>
                   <label htmlFor="Restaurant" style={{marginBottom: 10}}>Pet-friendly</label><br/>
               </form>
               <input type='submit' value="Add Recipe" className="btn-recipe"
