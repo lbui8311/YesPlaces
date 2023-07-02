@@ -1,0 +1,100 @@
+.btn-primary {
+  background-color: #C4EBFF;
+  background-color: cutom-color;
+  border-color: #000000;
+  border-color: cutom-cor;
+  border: solid 3px;
+  text-align: center;
+  max-width: 400px;
+  border-radius: 10px;
+}
+.btn-rec {
+  background-color: #C4EBFF;
+  background-color: cutom-color;
+  border-color: #000000;
+  border-color: cutom-cor;
+  border: solid 3px;
+  text-align: center;
+  max-width: 600px;
+  border-radius: 10px;
+}
+.btn-secondary {
+  background-color: #C4EBFF;
+  background-color: cutom-color;
+  border-color: #000000;
+  border-color: cutom-cor;
+  border: solid 5px;
+  border-width: 12%;
+  text-align: center;
+  width: auto;
+  border-radius: 10px;
+}
+.map{
+  border: 'solid 3px';
+  max-width: '300px';
+  border-radius: '10px';
+  background-color: '#cee6fe';
+  max-height: auto;
+  margin: auto;
+}
+/*Luan's setup below */
+.Pet { /* CSS */
+  background-image: url('dog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.border-text
+{
+  font-family: georgia;
+  color: black;
+  font-size: 35pt;
+  font-style: italic; 
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+
+}
+
+
+
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.star-rating__title {
+  margin-right: 10px;
+}
+
+.star-rating__star {
+  position: relative;
+  display: inline-block;
+  /* cursor: pointer; */
+}
+
+.star-rating__icon {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.star-rating__icon::before {
+  content: '\2606';
+}
+
+.star-rating__star input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.star-rating__star input[type='radio']:checked ~ .star-rating__icon::before {
+  content: '\2605';
+  color: gold;
+}
