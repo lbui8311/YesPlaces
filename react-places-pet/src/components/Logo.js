@@ -1,4 +1,4 @@
-import './index1.css'
+import './Petind.css'
 const Logo = () => {
   return (
     <div style={{paddingTop:10}}>

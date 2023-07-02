@@ -2,12 +2,13 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Comment from './Comment';
+import { Rating } from '@mui/material';
 function ComCard({photo}) {
     return (
       <Card
       style={{
         border: 'solid 3px',
-        maxWidth: 'auto',
+        maxWidth: '400px',
         borderRadius: '10px',
         backgroundColor: '#dcedf6',
         height: '275px',
@@ -19,9 +20,10 @@ function ComCard({photo}) {
           <Col xs={4}>
             <img
               src={photo}
-              style={{ maxWidth: '100%', height: '50px', border: 'solid 3px' }}/>
+              style={{ maxWidth: '100%', height: '50px', border: 'solid 3px'}}/>
+              <Rating style={{paddingTop: '5px'}} size="small" value={5} readOnly />
           </Col>
-          <Col xs={8}>
+          <Col xs={8}> 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Col>
         </Row>
@@ -31,6 +33,7 @@ function ComCard({photo}) {
             <img
               src={photo}
               style={{ maxWidth: '100%', height: '50px', border: 'solid 3px' }}/>
+              <Rating style={{paddingTop: '5px'}} size="small" value={5} readOnly />
           </Col>
           <Col xs={8}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
