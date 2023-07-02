@@ -27,6 +27,8 @@ router.register(r'pet-restaurants', views.PetRestaurantViewSet)
 router.register(r'recipes', views.RecipeViewSet)
 router.register(r'hotels', views.HotelViewSet)
 router.register(r'profile', views.ProfileViewSet)
+router.register(r'profile', views.ProfilePlaceViewSet)
+router.register(r'profile', views.ProfileRecipeViewSet)
 
 
 urlpatterns = [

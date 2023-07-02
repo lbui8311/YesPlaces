@@ -100,3 +100,14 @@ class ProfileViewSet(viewsets.ModelViewSet):
    serializer_class = ProfileSerializer
    permission_classes = [permissions.AllowAny]
 
+class ProfilePlaceViewSet(viewsets.ModelViewSet):
+   queryset = ProfilePlace.objects.all().order_by('-id')
+   serializer_class = ProfilePlaceSerializer
+   permission_classes = [permissions.AllowAny]
+
+
+class ProfileRecipeViewSet(viewsets.ModelViewSet):
+   queryset = ProfileRecipe.objects.all().order_by('-id')
+   serializer_class = ProfileRecipeSerializer
+   permission_classes = [permissions.AllowAny]
+
