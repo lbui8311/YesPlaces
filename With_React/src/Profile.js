@@ -23,7 +23,7 @@ const App = () => {
 
   //Fetch Tasks
   const fetchPersonal = async () => {
-    const res = await fetch('http://localhost:8000/users/')
+    const res = await fetch('http://localhost:3000/profile/')
     const data = await res.json()
 
     console.log(data)
@@ -31,7 +31,7 @@ const App = () => {
   } 
 
   const addPersonalInfo = async (personals) => {
-    const res = await fetch('http://localhost:8000/users/',{
+    const res = await fetch('http://localhost:3000/profle/',{
       method: 'POST',
       headers: {
         'Content-type': 'application/json'

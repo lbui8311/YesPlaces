@@ -1,5 +1,5 @@
 from django.template import loader
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
@@ -56,12 +56,47 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
     
 
+
+class ReactView(APIView):
+   def get(self, request):
+      output = [{"username": output.username, "password": output.password}
+                for output in React.objects.all()]
+      return Response(output)
+   def post(self, request):
+      serializers = ReactSerializer(data=request.data)
+      if serializers.is_valid(raise_exception=True):
+         serializers.save()
+         return Response(serializers.data)
+      
+
+
+class UserViewSet(viewsets.ModelViewSet):
+   queryset = User.objects.all().order_by('-date_joined')
+   serializer_class = UserSerializer
+   permission_classes = [permissions.AllowAny]
+
+class RestaurantViewSet(viewsets.ModelViewSet):
+   queryset = Restaurant.objects.all().order_by('-id')
+   serializer_class = RestaurantSerializer
+   permission_classes = [permissions.AllowAny]
+
+class PetRestaurantViewSet(viewsets.ModelViewSet):
+   queryset = PetRestaurant.objects.all().order_by('-id')
+   serializer_class = PetRestaurantSerializer
+   permission_classes = [permissions.AllowAny]
+
+class RecipeViewSet(viewsets.ModelViewSet):
+   queryset = Recipe.objects.all().order_by('-id')
+   serializer_class = RecipeSerializer
+   permission_classes = [permissions.AllowAny]
+
+class HotelViewSet(viewsets.ModelViewSet):
+   queryset = Hotel.objects.all().order_by('-id')
+   serializer_class = HotelSerializer
+   permission_classes = [permissions.AllowAny]
+
 class ProfileViewSet(viewsets.ModelViewSet):
    queryset = Profile.objects.all().order_by('-id')
    serializer_class = ProfileSerializer
    permission_classes = [permissions.AllowAny]
 
-
-
-
-      

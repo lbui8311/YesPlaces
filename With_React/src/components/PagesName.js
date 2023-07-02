@@ -4,26 +4,26 @@ import React, { useState } from 'react';
 
 
 function PagesName({ onAdd }) {
-  const [userName, setUserName] = useState('');
-  const [city, setCity] = useState('');
-  const [pet, setPet] = useState('');
+  const [profileName, setProfileName] = useState('');
+  const [profileCity, setProfileCity] = useState('');
+  const [profilePetName, setProfilePetName] = useState('');
 
 
 
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(!userName) 
+    if(!profileName) 
     {
       alert('Please add a name')
       return
     }
 
-    onAdd({ userName, city, pet })
+    onAdd({ profileName, profileCity, profilePetName })
 
-    setUserName('')
-    setCity('')
-    setPet('')
+    setProfileName('')
+    setProfileCity('')
+    setProfilePetName('')
   }
 
 
@@ -36,7 +36,7 @@ function PagesName({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Change Display Name:</Form.Label>
-                      <Form.Control type="userName" placeholder="Display Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
+                      <Form.Control type="profileName" placeholder="Display Name" value={profileName} onChange={(e) => setProfileName(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
@@ -45,7 +45,7 @@ function PagesName({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Your Location:</Form.Label>
-                      <Form.Control type="city" placeholder="Name of your City" value={city} onChange={(e) => setCity(e.target.value)}/>
+                      <Form.Control type="city" placeholder="Name of your City" value={profileCity} onChange={(e) => setProfileCity(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
@@ -56,7 +56,7 @@ function PagesName({ onAdd }) {
                 <Form style={{width: 320,}}>
                     <Form.Group className="mb-3">
                       <Form.Label>Pet Name:</Form.Label>
-                      <Form.Control type="pet" placeholder="Name of pet" value={pet} onChange={(e) => setPet(e.target.value)}/>
+                      <Form.Control type="pet" placeholder="Name of pet" value={profilePetName} onChange={(e) => setProfilePetName(e.target.value)}/>
                     </Form.Group>
                 </Form>
               </div>
