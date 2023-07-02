@@ -18,21 +18,28 @@ class Choice(models.Model):
         return self.choice_text
 
 
+class React(models.Model):
+    username = models.CharField(max_length=30)
+    password = models.CharField(max_length=30)
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
+class PetRestaurant(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
+class Recipe(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=30)
+    review = models.CharField(max_length=100)
+
 class Profile(models.Model):
-    placeName = models.CharField(max_length=30)
-    placeAddress = models.CharField(max_length=100)
-    placeCity = models.CharField(max_length=100)
-    placeCountry = models.CharField(max_length=100)
-    placeDescription = models.CharField(max_length=256)
-    placeLink = models.CharField(max_length=100)
-    placeType = models.CharField(max_length=50)
-
-    profileName = models.CharField(max_length=100)
-    profileCity = models.CharField(max_length=100)
-    profilePetName = models.CharField(max_length=100)
-
-    recipeName = models.CharField(max_length=100)
-    recipeIngredients = models.CharField(max_length=255)
-    recipeInstructions = models.CharField(max_length=255)
-    recipeLocation = models.CharField(max_length=100)
+    profileName = models.CharField("Change Display Name:", max_length=100)
+    profileCity = models.CharField("Enter Location:", max_length=100)
+    profilePetName = models.CharField("Pet Name:", max_length=100)
 

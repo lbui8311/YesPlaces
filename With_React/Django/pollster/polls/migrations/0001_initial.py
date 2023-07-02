@@ -29,4 +29,13 @@ class Migration(migrations.Migration):
                 ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.Question')),
             ],
         ),
+         migrations.CreateModel(
+            name='Profile',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('profileName', models.CharField(max_length=100, verbose_name='Change Display Name:')),
+                ('profileCity', models.CharField(max_length=100, verbose_name='Enter Location:')),
+                ('profilePetName', models.CharField(max_length=100, verbose_name='Pet Name:')),
+            ],
+        ),
     ]
