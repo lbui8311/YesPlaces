@@ -1,0 +1,91 @@
+.btn-primary {
+  background-color: #C4EBFF;
+  background-color: cutom-color;
+  border-color: #000000;
+  border-color: cutom-cor;
+  border: solid 3px;
+  text-align: center;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.btn-secondary {
+  background-color: #C4EBFF;
+  background-color: cutom-color;
+  border-color: #000000;
+  border-color: cutom-cor;
+  border: solid 5px;
+  border-width: 12%;
+  text-align: center;
+  width: auto;
+  border-radius: 10px;
+}
+.map{
+  border: 'solid 3px';
+  max-width: '300px';
+  border-radius: '10px';
+  background-color: '#cee6fe';
+  max-height: auto;
+  margin: auto;
+}
+/*Luan's setup below */
+body { /* CSS */
+  background-image: url('dog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.border-text
+{
+  font-family: georgia;
+  color: black;
+  font-size: 35pt;
+  font-style: italic; 
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+
+}
+
+.btn-space
+{
+  margin-right: 50px;
+}
+
+.btn0 {
+background-color: transparent;
+border: none;
+padding-top: 5%;
+padding-left: 5%;
+width: 300px;
+}
+
+.btn {
+background-color: transparent;
+border: 0px;
+border-width: 12%;
+height: 50px;
+width: 150px;
+}
+
+.btn1 {
+background-color: #C4EBFF;
+border: solid 5px;
+border-width: 12%;
+outline: dark;
+height: 50px;
+width: 150px;
+border-radius: 10px;
+}
+
+.btn2 {
+background-color: #C4EBFF;
+border: solid 3px;
+border-width: 12%;
+outline: dark;
+height: 50px;
+width: 150px;
+border-radius: 10px;
+}
