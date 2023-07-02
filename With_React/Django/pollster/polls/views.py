@@ -13,6 +13,8 @@ from polls.serializers import UserSerializer
 from polls.serializers import RestaurantSerializer
 from .serializers import *
 from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
 
 from .models import *
 
@@ -96,4 +98,20 @@ class HotelViewSet(viewsets.ModelViewSet):
    permission_classes = [permissions.AllowAny]
 
 
-      
+
+class LoginView(APIView):
+   permission_classes = (IsAuthenticated,)
+   def get(self, request):
+      content = {'message': 'Welcome to the JWT Authentication page using React JS and Django!'}
+      return Response(content)
+
+class LogoutView(APIView):
+   permission_classes = (IsAuthenticated,)
+   def post(self, request):
+      try:
+         refresh_token = request.data["refresh_token"]
+         token = refresh_token(refresh_token)
+         token.blacklist()
+         return Response(status=status.HTTP_205_RESET_CONTENT)
+      except Exception as e:
+         return Response(status=status.HTTP_400_BAD_REQUEST)

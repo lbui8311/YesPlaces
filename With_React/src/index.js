@@ -7,6 +7,7 @@ import './custom.css';
 import Main from './Main'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './interceptor/axios';
 
 ReactDOM.render(
   <React.StrictMode>

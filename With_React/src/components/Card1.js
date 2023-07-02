@@ -1,10 +1,10 @@
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import recipe from './empty-recipe.jpg';
+// import recipe from './empty-recipe.jpg';
 import Titles1 from './Titles1';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Comment from './Comment';
 function Card1({name,photo,desc,title,rev1}) {
     return (
