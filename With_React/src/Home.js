@@ -207,19 +207,6 @@ const Home = () => {
     setUsers([...users, data])
   }
 
-  // const userLogin = async (user) => {
-  //   const res = await fetch('http://localhost:8000/users/', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-type': 'application/json',
-  //     },
-  //     // body: JSON.stringify(user),
-  //   })
-
-  //   const data = await res.json()
-
-  // }
-
   return (
     <>
     <Container>
@@ -264,7 +251,7 @@ const Home = () => {
         </div> */}
 
     <Footer/>
-    </>
+   </>
   )
 }
 

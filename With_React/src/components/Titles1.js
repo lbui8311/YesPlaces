@@ -1,22 +1,10 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
-// import PropTypes from 'prop-types';
-function Titles1({word,style}) {
-  const cardStyle={
-    border: 'solid 3px',
-    maxWidth: 'auto',
-    borderRadius: '10px',
-    backgroundColor: '#ECE3F0',
-    ...style,
-  };
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Petind.css';
+import Form from 'react-bootstrap/Form';
+function Titles1({word}) {
   return (
-     <Card style={cardStyle}>
-      <Card.Body>
-        <Card.Text>
-          {word}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+ <Form className="btn-primary">{word}</Form>       
   );
 }
 
