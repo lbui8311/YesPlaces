@@ -97,6 +97,22 @@ class HotelViewSet(viewsets.ModelViewSet):
    serializer_class = HotelSerializer
    permission_classes = [permissions.AllowAny]
 
+class ProfileViewSet(viewsets.ModelViewSet):
+   queryset = Profile.objects.all().order_by('-id')
+   serializer_class = ProfileSerializer
+   permission_classes = [permissions.AllowAny]
+
+class ProfilePlaceViewSet(viewsets.ModelViewSet):
+   queryset = ProfilePlace.objects.all().order_by('-id')
+   serializer_class = ProfilePlaceSerializer
+   permission_classes = [permissions.AllowAny]
+
+
+class ProfileRecipeViewSet(viewsets.ModelViewSet):
+   queryset = ProfileRecipe.objects.all().order_by('-id')
+   serializer_class = ProfileRecipeSerializer
+   permission_classes = [permissions.AllowAny]
+
 
 
 class LoginView(APIView):
@@ -110,7 +126,7 @@ class LogoutView(APIView):
    def post(self, request):
       try:
          refresh_token = request.data["refresh_token"]
-         token = refresh_token(refresh_token)
+         token = RefreshToken(refresh_token)
          token.blacklist()
          return Response(status=status.HTTP_205_RESET_CONTENT)
       except Exception as e:

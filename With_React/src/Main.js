@@ -21,17 +21,18 @@ const Main = () => {
 
   return (
     <div>
-        <form className="Navbar" href="#" style={{backgroundColor: 'transparent', marginTop: 30}} >
+        <form className="Navbar" href="#" style={{backgroundColor: 'transparent', marginTop: 15}} >
           <button className="btn0" style={{paddingTop:10, backgroundColor: 'transparent'}}> <span class="border-text"><a href="/" style={{textDecoration: 'none', color: 'black'}}>Yes!Places</a></span></button>
           <button className="btn2" style={{margin: 2}}><a href="home" style={{textDecoration: 'none', color: 'black', padding: 45}}>Home</a></button>
           <button className="btn2" style={{margin: 2}}><a href="restaurant" style={{textDecoration: 'none', color: 'black', padding: 25}}>Restaurants</a></button>
           <button className="btn2" style={{margin: 2}}><a href="pet-restaurant" style={{textDecoration: 'none', color: 'black', padding: 8}}>Pet Restaurants</a></button>
           <button className="btn2" style={{margin: 2}}><a href="recipe" style={{textDecoration: 'none', color: 'black', padding: 5}}>Cooking Recipes</a></button>
           <button className="btn2" style={{margin: 2}}><a href="hotel" style={{textDecoration: 'none', color: 'black', padding: 45}}>Hotels</a></button>
+          <button className="btn2" style={{margin: 2}}><a href="profile" style={{textDecoration: 'none', color: 'black', padding: 45}}>Profile</a></button>
           <button className="btn2" style={{margin: 2}}><a href="about" style={{textDecoration: 'none', color: 'black', padding: 45}}>About</a></button>
-          <button className='btn2' style={{margin: 2}}>
-            {isAuth ? <a href="home" style={{textDecoration: 'none', color: 'black', padding: 45}}>Logout</a> :
-                      <a href="home" style={{textDecoration: 'none', color: 'black', padding: 45}}>Login</a>}      
+          <button className='btn2' style={{width: 80}}>
+            {isAuth ? <a href="home" style={{textDecoration: 'none', color: 'black', padding: 10}}>Logout</a> :
+                      <a href="home" style={{textDecoration: 'none', color: 'black', padding: 10}}>Login</a>}      
           </button>
         </form>
 

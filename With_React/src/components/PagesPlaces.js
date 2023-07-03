@@ -5,20 +5,20 @@ import shop from './shop.jpg'
 
 
 function PagesPlaces({ onAdd }) {
-  const [place, setPlace] = useState('');
-  const [street, setStreet] = useState('');
-  const [cityAddress, setCityAddress] = useState('');
-  const [country, setCountry] = useState('');
+  const [placeName, setPlaceName] = useState('');
+  const [placeAddress, setPlaceAddress] = useState('');
+  const [placeCity, setPlaceCity] = useState('');
+  const [placeCountry, setPlaceCountry] = useState('');
   const [placeType, setPlaceType] = useState('');
-  const [description, setDescription] = useState('');
-  const [link, setLink] = useState('');
+  const [placeDescription, setPlaceDescription] = useState('');
+  const [placeLink, setPlaceLink] = useState('');
 
 
 
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(!place && !street && !cityAddress) 
+    if(!placeName && !placeAddress && !placeCity) 
     {
       alert('Please add a name and full address')
       return
@@ -26,15 +26,15 @@ function PagesPlaces({ onAdd }) {
 
     
 
-    onAdd({ place, street, cityAddress, country, placeType, description, link })
+    onAdd({ placeName, placeAddress, placeCity, placeCountry, placeType, placeDescription, placeLink })
 
-    setPlace('')
-    setStreet('')
-    setCityAddress('')
-    setCountry('')
+    setPlaceName('')
+    setPlaceAddress('')
+    setPlaceCity('')
+    setPlaceCountry('')
     setPlaceType('')
-    setDescription('')
-    setLink('')
+    setPlaceDescription('')
+    setPlaceLink('')
   }
 
 
@@ -49,28 +49,28 @@ function PagesPlaces({ onAdd }) {
 
               <Form.Group className="mb-3">
                 <Form.Label>Add a Place:</Form.Label>
-                <Form.Control type="Name of Place" placeholder="Name of Place" value={place} onChange={(e) => setPlace(e.target.value)}/>
+                <Form.Control type="Name of Place" placeholder="Name of Place" value={placeName} onChange={(e) => setPlaceName(e.target.value)}/>
               </Form.Group>
             </Form>
 
             <Form style={{width: 320,}}>
               <Form.Group className="mb-3">
                 <Form.Label>Street Address:</Form.Label>
-                <Form.Control type="Street Address" placeholder="Street Address" value={street} onChange={(e) => setStreet(e.target.value)}/>
+                <Form.Control type="Street Address" placeholder="Street Address" value={placeAddress} onChange={(e) => setPlaceAddress(e.target.value)}/>
               </Form.Group>
             </Form>
 
             <Form style={{width: 320,}}>
               <Form.Group className="mb-3">
                 <Form.Label>City:</Form.Label>
-                <Form.Control type="CityAddress" placeholder="City Address" value={cityAddress} onChange={(e) => setCityAddress(e.target.value)}/>
+                <Form.Control type="CityAddress" placeholder="City Address" value={placeCity} onChange={(e) => setPlaceCity(e.target.value)}/>
               </Form.Group>
             </Form>
 
             <Form style={{width: 320,}}>
               <Form.Group className="mb-3">
                 <Form.Label>Country:</Form.Label>
-                <Form.Control type="Country" placeholder="Country" value={country} onChange={(e) => setCountry(e.target.value)} />
+                <Form.Control type="Country" placeholder="Country" value={placeCountry} onChange={(e) => setPlaceCountry(e.target.value)} />
               </Form.Group>
             </Form>
 
@@ -83,7 +83,7 @@ function PagesPlaces({ onAdd }) {
               <Form style={{width: 320,}}>
                   <Form.Group className="mb-3">
                     <Form.Label>Description:</Form.Label>
-                    <Form.Control type="Description" placeholder="Description" style={{height: 125,}} value={description} onChange={(e) => setDescription(e.target.value)}/>
+                    <Form.Control type="Description" placeholder="Description" style={{height: 125,}} value={placeDescription} onChange={(e) => setPlaceDescription(e.target.value)}/>
                   </Form.Group>
               </Form>
 
@@ -91,7 +91,7 @@ function PagesPlaces({ onAdd }) {
               <Form style={{width: 320,}}>
                   <Form.Group className="mb-3">
                     <Form.Label>Link:</Form.Label>
-                    <Form.Control type="link" placeholder="Link to website" value={link} onChange={(e) => setLink(e.target.value)}/>
+                    <Form.Control type="link" placeholder="Link to website" value={placeLink} onChange={(e) => setPlaceLink(e.target.value)}/>
                   </Form.Group>
               </Form>
               
