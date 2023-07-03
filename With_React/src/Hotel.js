@@ -138,12 +138,12 @@ function Hotel() {
   </Row>
   </div>
   <Row>
-        <Col xs={4}><Card1 name="Picture #1" photo= {Hotel1} title={1} desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "/></Col>
+        <Col xs={4}><Card1 name="Hotel Circus" photo= {Hotel1} title={1} desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "/></Col>
         <Col xs={4}><Card2 photo= {profile}/></Col>
         <Col xs={4}><MapCard/></Col>
   </Row>
   <Row>
-        <Col xs={4}><Card1 name="Picture #2" photo={Hotel2} title={1} desc="This restaurant serves..."/></Col>
+        <Col xs={4}><Card1 name="Paw Place!" photo={Hotel2} title={1} desc="This hotel is known for..."/></Col>
         <Col xs={4}><Card2 photo={profile}/></Col>
         <Col xs={4}><MapCard/></Col>
   </Row>

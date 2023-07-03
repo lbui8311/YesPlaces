@@ -20,6 +20,8 @@ from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
 from polls.views import *
 from polls import views
+# from react_comments_django.sitemaps import ThreadSitemap
+# from react_comments_django.urls_api import urlpatterns as react_comments_django_urls_api
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -45,6 +47,10 @@ urlpatterns = [
          jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('login/',views.LoginView.as_view(), name='login'),
     # path('',include('polls.urls'))
-    path('logout/', views.LogoutView.as_view(), name='logout')
+    path('logout/', views.LogoutView.as_view(), name='logout'),
+
+    # path('api/comments/', submit_comment, name='submit_comment'),
+    #  url(r'^api/v1/', include(react_comments_django_urls_api)),
+    # url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 ]
